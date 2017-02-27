@@ -1,0 +1,17 @@
+@include font-face("icons", fonts/trademachines);
+
+[class^="icon-"],
+[class*=" icon-"] {
+  @include icon;
+}
+
+$icons : (
+	search-find: "\61",
+	tag : "\62"
+);
+// Setup a class name for each icon
+@each $name, $char in $icons {
+  .icon-#{$name}:before {
+    content: $char;
+  }
+}
