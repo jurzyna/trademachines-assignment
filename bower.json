@@ -1,0 +1,19 @@
+{
+  "name": "trademachines",
+  "version": "1.0.0",
+  "authors": [
+    "Mateusz Jurzyna"
+  ],
+  "main": "gulpfile.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.6"
+  },
+  "private": true
+}

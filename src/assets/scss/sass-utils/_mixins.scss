@@ -1,0 +1,89 @@
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+@mixin fontSize($size) {
+  // font-size: $size; //Fallback in px
+  font-size: calculateRem($size);
+}
+// @include fontSize(32px);
+
+// =============================================================================
+// Icons
+// =============================================================================
+@mixin icon($position: before, $icon: false, $styles: true) {
+  @if $styles {
+    // Supportive icon styles required
+    display: inline-block;
+    font: normal normal normal 14px/1 "icons";
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-transform: none !important;
+    background-repeat: no-repeat;
+  }
+
+  @if $position == both {
+    $position: 'before, &:after'; 
+  }
+  // Either a :before or :after pseudo-element, or both, defaulting to :before
+  @if $position == none {
+    content: "#{map-get($icons, $icon)}";
+  } @else{
+    &:#{$position} {
+      @if $icon {
+        // A particular icon has been specified
+        content: "#{map-get($icons, $icon)}";
+      }
+      // Include any extra rules supplied for the pseudo-element
+      @content;
+    }
+  }
+}
+// =============================================================================
+// String Replace
+// =============================================================================
+
+@function str-replace($string, $search, $replace: "") {
+	$index: str-index($string, $search);
+
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+
+	@return $string;
+}
+
+// =============================================================================
+// Font Face
+// =============================================================================
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff ttf svg) {
+	$src: null;
+
+	$extmods: (
+		eot: "?",
+		svg: "#" + str-replace($name, " ", "_")
+	);
+
+	$formats: (
+		otf: "opentype",
+		ttf: "truetype"
+	);
+
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote("../" + $path + "." + $extmod)) format(quote($format)), comma);
+	}
+
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+	}
+}

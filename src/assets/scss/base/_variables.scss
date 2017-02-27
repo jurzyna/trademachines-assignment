@@ -1,0 +1,20 @@
+// Colors
+$gray-lighter: #e5e5e5;
+$gray-light: #9B9B9B;
+$gray-medium: #4a4a4a;
+$gray: #333333;
+$white: #fff;
+$black: #000;
+$red: #d42e12;
+
+// Trnasition Lenghts
+$generalTransition: 0.3s;
+
+$breakpoints:(
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1600px
+);
