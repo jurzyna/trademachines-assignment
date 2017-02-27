@@ -5,15 +5,16 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
+// Reset and dependencies
+@import "normalize";
+
+
 // Core variables and mixins
 @import "variables";
 @import "mixins";
 @import "custom";
 
-// Reset and dependencies
-@import "normalize";
 @import "print";
-
 // Core CSS
 @import "reboot";
 @import "type";
@@ -33,13 +34,13 @@
 @import "nav";
 // @import "navbar";
 // @import "card";
-// @import "breadcrumb";
+@import "breadcrumb";
 // @import "pagination";
 // @import "badge";
 // @import "jumbotron";
 // @import "alert";
 // @import "progress";
-// @import "media";
+@import "media";
 // @import "list-group";
 // @import "responsive-embed";
 // @import "close";
