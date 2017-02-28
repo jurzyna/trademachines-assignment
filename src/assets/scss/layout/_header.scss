@@ -1,0 +1,58 @@
+.header{
+	background-color: $white;
+	padding: 0 15px;
+	border-bottom: 2px solid $blue-dark;
+	&-title{
+		height: 70px;
+		h3{
+			line-height: 70px;
+			color: $blue-dark;
+		}
+	}
+	&-search{
+		padding: 0;
+		border-left: 2px solid $blue-dark;
+		border-right: 2px solid $blue-dark;
+		@include media-breakpoint-down(sm) {
+			border-top: 2px solid $blue-dark;
+			border-left: none;
+		}
+		&-wrap{
+			position: relative;
+		}
+		&-field{
+			font-size: 30px;
+			width: 100%;
+			padding-right: 50px;
+			height: 70px;
+		}
+		&-btn{
+			position: absolute;
+			top: 0;
+			right: 0;
+			line-height: 70px;
+			height: 100%;
+			width: 50px;
+			text-align: center;
+		}
+	}
+	&-login{
+		padding: 0;
+		@include media-breakpoint-down(sm) {
+			border-top: 2px solid $blue-dark;
+		}
+		&-btn{
+			display: block;
+			line-height: 70px;
+			width: 120px;
+			text-align: center;
+			height: 100%;
+			transition: all .2s;
+			&:hover{
+				background-color: $blue-dark;
+				color: $white;
+				text-decoration: none;
+			}
+		}
+	}
+}

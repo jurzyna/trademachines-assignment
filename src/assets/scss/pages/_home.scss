@@ -1,0 +1,22 @@
+.post-list{
+	margin-top: 30px;
+	&-item{
+		margin-bottom: 50px;
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+	.media-body{
+		padding-right: 10px;
+		@include media-breakpoint-up(sm) {
+			padding-right: 30px;
+		}
+	}
+	&-image{
+		max-width: 100px;
+		@include media-breakpoint-up(sm) {
+			max-width: 170px;
+		}
+	}
+	&-action{}
+}

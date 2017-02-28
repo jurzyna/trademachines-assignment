@@ -1,0 +1,18 @@
+.breadcrumbs{
+	background-color: $white-dirty;
+}
+
+.tag-list{
+	&-item{
+		margin: 5px 0;
+		padding: 0;
+		.nav-link{
+			padding: 0 15px 0 0;
+			font-size: 18px;
+		}
+		i{
+			font-size: 25px;
+			vertical-align: middle;
+		}
+	}
+}

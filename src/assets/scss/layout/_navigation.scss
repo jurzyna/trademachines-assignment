@@ -1,0 +1,16 @@
+.side-nav{
+	margin-top: -5px;
+	.nav-link{
+	    padding: 0.4em 0;
+	    font-weight: 500;
+	}
+	.side-nav{
+		padding-left: 15px;
+		margin-bottom: 25px;
+		border-left: 2px solid $gray-lighter;
+		.nav-link{
+		    font-weight: 300;
+		}
+	}
+}
+	

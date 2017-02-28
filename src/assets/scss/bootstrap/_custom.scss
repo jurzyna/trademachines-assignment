@@ -2,67 +2,50 @@
 //
 // Copy variables from `_variables.scss` to this file to override default values
 // without modifying source files.
-
-$body-bg:       $white ;
-$body-color:    #414141;
+$body-bg: $white;
+$body-color: #414141;
 $link-color: #646464;
-$link-hover-color: $red;
-
-
-
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1600px
-);
-
-$border-radius:          0;
-$border-radius-lg:       0;
-$border-radius-sm:       0;
-
+$link-hover-color: lighten($blue-dark, 14);
+$grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1600px);
+$border-radius: 0;
+$border-radius-lg: 0;
+$border-radius-sm: 0;
 //fonts
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
-$font-family-sans-serif: 'Roboto', sans-serif;
+$font-family-sans-serif: 'Roboto',
+sans-serif;
 $font-family-base: $font-family-sans-serif;
 $font-weight-normal: 300;
-$font-weight-bold:  400;
+$font-weight-bold: 400;
 $font-weight-base: $font-weight-normal;
-
-$headings-font-weight:   400;
-
+$headings-font-weight: 400;
 $input-color: $body-color;
 $input-border-color: #d5d5d5;
 $input-border-radius: 0;
-$input-padding-x:                1rem;
-$input-padding-y:                1rem;
-$input-line-height:              1.25;
-$custom-select-padding-x:          .9rem;
-$custom-select-padding-y:          .5rem;
+$input-padding-x: 1rem;
+$input-padding-y: 1rem;
+$input-line-height: 1.25;
+$custom-select-padding-x: .9rem;
+$custom-select-padding-y: .5rem;
 $input-btn-border-width: 0;
 $input-box-shadow: none;
-$input-bg-focus:                 $white;
-$input-border-focus:             transparent;
-$input-box-shadow-focus:         $input-box-shadow, rgba($input-border-focus, .6) !default;
-$input-color-focus:              $input-color !default;
-
-$input-color-placeholder:        $gray-light !default;
-
-
+$input-bg-focus: $white;
+$input-border-focus: transparent;
+$input-box-shadow-focus: $input-box-shadow,
+rgba($input-border-focus,
+.6) !default;
+$input-color-focus: $input-color !default;
+$input-color-placeholder: $gray-light !default;
 // $btn-primary-color: $red;
-$btn-primary-bg: $red;
-$btn-primary-border: $red;
-$btn-padding-x:                  1rem ;
-$btn-padding-y:                  .5rem ;
-$btn-line-height:                1.25;
-
+$btn-primary-bg: $blue-dark;
+$btn-primary-border: $blue-dark;
+$btn-padding-x: 1rem;
+$btn-padding-y: .5rem;
+$btn-line-height: 1.25;
 $nav-link-padding: .5em 1.05em;
-
+$btn-border-radius: 0;
 // Breadcrumbs
-$breadcrumb-bg:                 $white-dirty;
-$breadcrumb-active-color:       $gray-light !default;
-$breadcrumb-divider:            "/" !default;
-
-
+$breadcrumb-bg: $white-dirty;
+$breadcrumb-active-color: $gray-light !default;
+$breadcrumb-divider: "/" !default;
+$breadcrumb-padding-x: 0;
