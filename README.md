@@ -1,3 +1,7 @@
+We have 2 folders here:
+- dist ( a production folder)
+- distDev ( a development folder)
+
 Open the folder in your command line, and install the needed dependencies:
 
 ```bash
