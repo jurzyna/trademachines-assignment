@@ -7,7 +7,9 @@
 
 $icons : (
 	search-find: "\61",
-	tag : "\62"
+	tag : "\62",
+	bars : "\63",
+	grid : "\64"
 );
 // Setup a class name for each icon
 @each $name, $char in $icons {

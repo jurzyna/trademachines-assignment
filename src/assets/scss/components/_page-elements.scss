@@ -16,3 +16,19 @@
 		}
 	}
 }
+
+.view-switcher{
+	float: right;
+	&-btn{
+		display: inline-block;
+		margin-left: 4px;
+		line-height: 33px;
+		width: 33px;
+		text-align: center;
+		border: 1px solid $gray-lighter;
+		cursor: pointer;
+		i{
+		    vertical-align: middle;
+		}
+	}
+}

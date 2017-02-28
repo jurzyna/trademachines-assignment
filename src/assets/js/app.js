@@ -15,6 +15,8 @@ var domReady = function(callback) {
 		initDom: function () {	
 			elem.postList = document.querySelector('.post-list');
 			elem.headerSearch = document.querySelector('.header-search-field');
+			elem.viewSwitchGrid = document.querySelector('.js-switch-grid');
+			elem.viewSwitchList = document.querySelector('.js-switch-list');
 			elem.ajaxFireCount = 0;
 			elem.tagList;
 			elem.postImageList;
@@ -26,6 +28,22 @@ var domReady = function(callback) {
 	    	function ajaxSearch(e) {
 	    		var searchVal = e.target.value;
 	    		trademachines.loadAJAX(searchVal);
+	    	}
+
+	    	elem.viewSwitchGrid.addEventListener('click', function(e){
+	    		if(!elem.postList.classList.contains('grid-view')){
+	    			elem.postList.classList.add('grid-view');
+	    		}
+	    		elem.postList.classList.remove('list-view');
+	    	});
+	    	elem.viewSwitchList.addEventListener('click', function(e){
+	    		if(!elem.postList.classList.contains('list-view')){
+	    			elem.postList.classList.add('list-view');
+	    		}
+	    		elem.postList.classList.remove('grid-view');
+	    	});
+	    	function switchListView(e){
+	    		
 	    	}
 	    },
 	    loadAJAX: function(searchVal = false){
@@ -79,7 +97,8 @@ var domReady = function(callback) {
 
 	    		// filtering the list
 	    		if ((postData.title.search(searchExp) != -1) || (searchVal == false)){
-		    		output += '<li class="media post-list-item">';
+		    		output += '<li class="ccol-xs-6 col-sm-4 col-lg-4 media post-list-item">';
+		    		output += `<div class="post-list-image"><img class="img-fluid" src="${randomImages[post]}" alt="Generic placeholder image"></div>`;
 		    		output += '<div class="media-body">';
 		    		output += `<h5>${postData.title}</h5>`;
 		    		output += `<ul class="nav tag-list">`;
@@ -90,7 +109,6 @@ var domReady = function(callback) {
 		    		output += `<p>${postData.body}</p>`;
 		    		output += '<div class="post-list-action"><a href="#" class="btn btn-primary">Call to Action</a></div>';
 		    		output += '</div>';
-		    		output += `<div class="post-list-image"><img class="img-fluid" src="${randomImages[post]}" alt="Generic placeholder image"></div>`;
 		    		output += '<li>';
 		    	}
 	    	}
@@ -128,7 +146,7 @@ var domReady = function(callback) {
 			var images = [];
 
 			for (var i = 0; arrayLength > i; i++){
-				images.push(`https://unsplash.it/200/200?image=${trademachines.getRandomInt(800, 900)}`);
+				images.push(`https://unsplash.it/300/300?image=${trademachines.getRandomInt(800, 900)}`);
 			}
 			return images
 		}

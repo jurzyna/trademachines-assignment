@@ -1,22 +1,40 @@
 .post-list{
 	margin-top: 30px;
 	&-item{
+		flex-flow: row wrap;
 		margin-bottom: 50px;
 		&:last-child{
 			margin-bottom: 0;
 		}
 	}
-	.media-body{
-		padding-right: 10px;
-		@include media-breakpoint-up(sm) {
-			padding-right: 30px;
+	&.list-view{
+		.post-list-item{
+		    flex: 0 0 100%;
+		    max-width: 100%;
+		}
+		.media-body{
+			margin-top: 0;
+			padding-right: 10px;
+			flex: 1;
+			@include media-breakpoint-up(sm) {
+				padding-right: 30px;
+			}
+		}
+		.post-list-image{
+			max-width: 100px;
+			order: 2;
+			flex: 1;
+			@include media-breakpoint-up(sm) {
+				max-width: 170px;
+			}
 		}
 	}
+	.media-body{
+		margin-top: 15px;
+		flex: 1 100%;
+	}
 	&-image{
-		max-width: 100px;
-		@include media-breakpoint-up(sm) {
-			max-width: 170px;
-		}
+	    flex: 1 100%;
 	}
 	&-action{}
 }
