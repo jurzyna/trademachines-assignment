@@ -1,7 +1,9 @@
 // Breakpoints
 // @include media-breakpoint-down(xs) {
 // @include media-breakpoint-up(xs) {
-
+body{
+	overflow-y: scroll;
+}
 .container-fluid{
 	max-width: 1140px;
 }
