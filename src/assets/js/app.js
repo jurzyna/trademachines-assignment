@@ -5,7 +5,7 @@ var domReady = function(callback) {
     document.readyState === "interactive" || document.readyState === "complete" ? callback() : document.addEventListener("DOMContentLoaded", callback);
 };
 
-(function(){
+(function() {
 	'use strict';
 
 	// global object used to initialize functions
@@ -158,4 +158,4 @@ var domReady = function(callback) {
 	    trademachines.events();
 	    trademachines.loadAJAX();
 	});
-})(document);
+})();
